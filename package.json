@@ -1,0 +1,32 @@
+{
+  "name": "superviews-loader",
+  "version": "0.0.1",
+  "description": "loader module using superviews.js (by davidjamesstone) for webpack.",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "tsc --project \"./src\""
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "incremental-dom",
+    "superviews.js"
+  ],
+  "author": "nishizawa <nishiza.m@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishiza/superviews-loader.git"
+  },
+  "devDependencies": {
+    "@types/acorn": "^4.0.0",
+    "tslint": "^4.2.0",
+    "typescript": "^2.1.4"
+  },
+  "dependencies": {
+    "acorn": "^4.0.4",
+    "astring": "^0.8.0",
+    "loader-utils": "^0.2.16",
+    "superviews.js": "^3.0.1"
+  }
+}
