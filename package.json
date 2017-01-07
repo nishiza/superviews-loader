@@ -4,7 +4,8 @@
   "description": "loader module using superviews.js (by davidjamesstone) for webpack.",
   "main": "index.js",
   "scripts": {
-    "prepublish": "tsc --project \"./src\""
+    "prepublish": "tsc --project \"./src\"",
+    "test": "mocha --ui tdd"
   },
   "keywords": [
     "webpack",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@types/acorn": "^4.0.0",
+    "mocha": "^3.2.0",
     "tslint": "^4.2.0",
     "typescript": "^2.1.4"
   },
