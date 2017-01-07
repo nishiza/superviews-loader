@@ -24,6 +24,10 @@ build:
   steps:
     # A step that executes `npm install` command
     - npm-install
+    - script:
+        name: run npm script
+        code: |
+          npm run build
     # A step that executes `npm test` command
     - npm-test
 
