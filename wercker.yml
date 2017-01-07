@@ -27,7 +27,7 @@ build:
     - script:
         name: run npm script
         code: |
-          npm run build
+          npm run prepublish
     # A step that executes `npm test` command
     - npm-test
 
