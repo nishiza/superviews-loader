@@ -6,7 +6,7 @@ suite('webpack loader', () => {
 
     suite('loader', () => {
         test('should be finished successfully.', () => {
-            const result = loader.bind({
+            const result = loader.loaderMain.bind({
                 cacheable: () => {},
                 options: { }
             })('<template args=""><div></div></template>');

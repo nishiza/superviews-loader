@@ -1,14 +1,21 @@
 import * as loaderUtils from 'loader-utils';
-import superviews = require('superviews.js');
+import * as superviews from 'superviews.js';
 import * as acorn from 'acorn';
-import astring = require('astring');
+import * as astring from 'astring';
 import * as ESTree from 'estree';
+export
 interface LoaderOption {
   argstr?: string;
   mode?: string;
   astring?: any;
 }
-function loaderMain (content: string): string {
+export
+interface LoaderContext {
+  query: string;
+  options: {superviews?: LoaderOption};
+  cacheable(flag?: boolean): void;
+}
+export function loaderMain(this: LoaderContext, content: string): string {
   this.cacheable();
   const query: LoaderOption = loaderUtils.parseQuery(this.query);
   const option: LoaderOption = this.options && this.options.superviews;
@@ -18,4 +25,3 @@ function loaderMain (content: string): string {
   const ast: ESTree.Program = acorn.parse(result, {});
   return astring(ast, query.astring || (option && option.astring) || {});
 }
-export  = loaderMain;
