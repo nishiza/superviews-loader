@@ -7,9 +7,23 @@ suite('webpack loader', () => {
     suite('loader', () => {
         test('should be finished successfully.', () => {
             const result = loader.loaderMain.bind({
-                cacheable: () => {},
-                options: { }
+                cacheable: () => {
+                },
+                options: {}
+            })('<template args=""><div></div></template>');
+        });
+
+        test('should be finished successfully with mode === "es6".', () => {
+            const result = loader.loaderMain.bind({
+                cacheable: () => {
+                },
+                options: {
+                    superviews: {
+                        mode: 'es6'
+                    }
+                }
             })('<template args=""><div></div></template>');
         });
     });
+
 });

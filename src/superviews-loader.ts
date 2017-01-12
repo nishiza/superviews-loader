@@ -15,6 +15,7 @@ interface LoaderContext {
   options: {superviews?: LoaderOption};
   cacheable(flag?: boolean): void;
 }
+
 export function loaderMain(this: LoaderContext, content: string): string {
   this.cacheable();
   const query: LoaderOption = loaderUtils.parseQuery(this.query);
@@ -22,6 +23,6 @@ export function loaderMain(this: LoaderContext, content: string): string {
   const mode = query.mode || (option && option.mode) || 'cjs';
   const argstr = query.argstr || (option && option.argstr) || undefined;
   const result = superviews(content, undefined, argstr, mode);
-  const ast: ESTree.Program = acorn.parse(result, {});
+  const ast: ESTree.Program = acorn.parse(result, mode === 'es6' ? { sourceType: 'module' } : {});
   return astring(ast, query.astring || (option && option.astring) || {});
 }
