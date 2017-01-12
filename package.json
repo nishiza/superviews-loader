@@ -1,6 +1,6 @@
 {
   "name": "superviews-loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "loader module using superviews.js (by davidjamesstone) for webpack.",
   "main": "index.js",
   "scripts": {
