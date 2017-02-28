@@ -18,11 +18,10 @@ interface LoaderContext {
 
 export function loaderMain(this: LoaderContext, content: string): string {
   this.cacheable();
-  const query: LoaderOption = loaderUtils.parseQuery(this.query);
-  const option: LoaderOption = this.options && this.options.superviews;
-  const mode = query.mode || (option && option.mode) || 'cjs';
-  const argstr = query.argstr || (option && option.argstr) || undefined;
+  const option: LoaderOption = loaderUtils.getOptions(this);
+  const mode = (option && option.mode) || 'cjs';
+  const argstr = (option && option.argstr) || undefined;
   const result = superviews(content, undefined, argstr, mode);
   const ast: ESTree.Program = acorn.parse(result, mode === 'es6' ? { sourceType: 'module' } : {});
-  return astring(ast, query.astring || (option && option.astring) || {});
+  return astring(ast, (option && option.astring) || {});
 }
