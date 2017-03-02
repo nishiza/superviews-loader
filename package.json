@@ -1,6 +1,6 @@
 {
   "name": "superviews-loader",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "loader module using superviews.js (by davidjamesstone) for webpack.",
   "main": "index.js",
   "scripts": {
@@ -20,15 +20,12 @@
     "url": "git+https://github.com/nishiza/superviews-loader.git"
   },
   "devDependencies": {
-    "@types/acorn": "^4.0.0",
     "mocha": "^3.2.0",
-    "tslint": "^4.5.0",
+    "tslint": "^4.5.1",
     "typescript": "^2.2.1"
   },
   "dependencies": {
-    "acorn": "^4.0.11",
-    "astring": "^0.8.0",
     "loader-utils": "^1.0.2",
-    "superviews.js": "^3.0.1"
+    "superviews.js": "^3.0.2"
   }
 }

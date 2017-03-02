@@ -9,21 +9,37 @@ suite('webpack loader', () => {
             const result = loader.loaderMain.bind({
                 cacheable: () => {
                 },
-                options: {}
+                loaders: [],
+                async: () => {
+                    return (arg, result, map) => {
+
+                    };
+                },
+                options:{
+                },
+                query: {
+                }
             })('<template args=""><div></div></template>');
+            console.log(result);
         });
 
         test('should be finished successfully with mode === "es6".', () => {
             const result = loader.loaderMain.bind({
                 cacheable: () => {
                 },
-                options: {
-                    superviews: {
-                        mode: 'es6'
-                    }
+                loaders: [],
+                async: () => {
+                    return (arg, result, map) => {
+
+                    };
+                },
+                options:{
+                },
+                query: {
+                    mode: 'es6'
                 }
             })('<template args=""><div></div></template>');
+            console.log(result);
         });
     });
-
 });
