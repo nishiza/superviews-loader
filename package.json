@@ -20,12 +20,12 @@
     "url": "git+https://github.com/nishiza/superviews-loader.git"
   },
   "devDependencies": {
-    "mocha": "^3.2.0",
-    "tslint": "^4.5.1",
-    "typescript": "^2.2.1"
+    "mocha": "^3.4.2",
+    "tslint": "^5.4.3",
+    "typescript": "^2.4.0"
   },
   "dependencies": {
-    "loader-utils": "^1.0.2",
-    "superviews.js": "^3.0.2"
+    "loader-utils": "^1.1.0",
+    "superviews.js": "^3.0.4"
   }
 }
