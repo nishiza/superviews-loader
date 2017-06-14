@@ -13,7 +13,6 @@ interface LoaderContext {
 
 export function loaderMain(this: LoaderContext, content: string): string {
   this.cacheable();
-  const options = loaderUtils.getOptions(this);
   const option: LoaderOption = Object.assign(
     { mode: 'cjs' },
     loaderUtils.getOptions(this), // it is safe to pass null to Object.assign()
