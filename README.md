@@ -107,3 +107,14 @@ module.exports = {
   devtool: 'source-map'
 };
 ```
+## Tips
+`webpack.config.js`
+```JavaScript
+var webpack = require('webpack');
+module.exports = {
+...
+  plugins: [
+    // because 'dist/incremental-dom-cjs.js' has a sourcemap reference, IE debugger will ignore your source.
+    new webpack.NormalModuleReplacementPlugin(/^incremental-dom$/i, 'incremental-dom/index.js')
+  ]
+```
